@@ -39,7 +39,7 @@ class Layout extends React.Component {
     // [TO] add new articles once
     // list of articles is less than 2
 
-    if(leftElement.length < articlesTotalEndpoint || rightElement.length < articlesTotalEndpoint ) {
+    if(element.length < articlesTotalEndpoint ) {
       this.newsData();
     }
   }
@@ -82,9 +82,9 @@ class Layout extends React.Component {
           <Header getNewsEvent={this.removeNewselements.bind(this)} />
           <main className={`mdl-layout__content ${s.content}`}>
             <div className={`${s.col}`}>
-              <div className={`left pp-content ${s.left}`}>
+              <div className={`pp-wrapper ${s.wrapper}`}>
                 {data.articles.map((article, i) => {
-                  return (<Item origin={origin} key = {i} side={'left'} article={article} source={src1} />);
+                  return (<Item origin={origin} key = {i}  article={article} source={src1} />);
                 })}
               </div>
               </div>

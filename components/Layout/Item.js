@@ -17,14 +17,13 @@ class Item extends React.Component {
 
     const article = this.props.article;
     const source = this.props.source;
-    const side = this.props.side;
 
     if(source === undefined) {
       return;
     }
 
     return (
-      <section className={`mdl-layout__item ${s.item} ${side}`} ref={node => (this.root = node)}>
+      <section className={`mdl-layout__item ${s.item}`} ref={node => (this.root = node)}>
         <div>
           <a title={source.name} href={source.url}><img alt={source.name} className={`${s.logo}`} src={source.urlsToLogos.small} /></a>
           <h6 className={`${s.title}`}>{article.title}</h6>
