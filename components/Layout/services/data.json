@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "source": "the-next-web",
+  "sortBy": "latest",
+  "articles": [
+   {
+    "author": "Matthew Hughes",
+    "title": "Amazon's new Alexa-powered Fire TV stick lands in the UK",
+    "description": "The new Fire TV Stick with Alexa is finally (finally!) making its way to the UK.",
+    "publishedAt": "2017-02-21T00:00:31Z"
+  },
+  {
+    "author": "Abhimanyu Ghoshal",
+    "title": "WhatsApp returns to its roots with its Snapchat-style Status feature",
+    "description": "Last September, we saw a Snapchat-like beta feature in WhatsApp that let you share photos, videos and GIFs as your 'Status'. It's now ready for prime-time.",
+    "publishedAt": "2017-02-20T17:03:55Z"
+  },
+   {
+    "author": "Abhimanyu Ghoshal",
+    "title": "WhatsApp returns to its roots with its Snapchat-style Status feature",
+    "description": "Last September, we saw a Snapchat-like beta feature in WhatsApp that let you share photos, videos and GIFs as your 'Status'. It's now ready for prime-time.",
+    "publishedAt": "2017-02-20T17:03:55Z"
+  },
+  {
+    "author": "Abhimanyu Ghoshal",
+    "title": "WhatsApp returns to its roots with its Snapchat-style Status feature",
+    "description": "Last September, we saw a Snapchat-like beta feature in WhatsApp that let you share photos, videos and GIFs as your 'Status'. It's now ready for prime-time.",
+    "publishedAt": "2017-02-20T17:03:55Z"
+  },
+  {
+    "author": "Abhimanyu Ghoshal",
+    "title": "WhatsApp returns to its roots with its Snapchat-style Status feature",
+    "description": "Last September, we saw a Snapchat-like beta feature in WhatsApp that let you share photos, videos and GIFs as your 'Status'. It's now ready for prime-time.",
+    "publishedAt": "2017-02-20T17:03:55Z"
+  } 
+  ]
+}
