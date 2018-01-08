@@ -52,14 +52,11 @@ class Layout extends React.Component {
       for(let item in e) {
         articleIdArray.push(e[item].id);
       }
-      console.log(e);
       let numberOfArticles = e.length;
       let sourceArticle = articleIdArray[_.random(0, numberOfArticles)];
-
       this.setState({ id: sourceArticle });
       return sourceArticle;   
     }).then( (source) => {
-	console.log(source);
 	getNews(source)
          .then(articles => { console.log(articles); this.setState({ news: articles })})
          .catch(error => console.log(error));
