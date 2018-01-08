@@ -1,35 +1,55 @@
+// Animations
 @keyframes fadein {
- from {opacity: 0},
- to {opacity: 1}
+  from {
+    opacity: 0
+  }
+  , to {
+    opacity: 1
+  }
 }
-
 
 .item {
+  top: 0;
   padding: 23px 25px 25px;
   background: #ddd;
-  border: 10px solid #ccc;
   color: #444;
   box-sizing: border-box;
-  top: 100px;
   animation: fadein 2s;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
 }
-  .title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 128px;
-    font-family: Poppins;
-    font-size: 30px;
-    font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.07;
-    letter-spacing: normal;
-    color: #151515;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
-  @media screen and (max-width: 1024px) {
-  }
+.item:before {
+  content: '';
+  position: absolute;
+  height: 400px;
+  width: 100%;
+  background: #000;
+  top: 0;
+  left: 0;
+  opacity: .3;
+  z-index: 0;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 128px;
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: normal;
+  color: #fff;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {}

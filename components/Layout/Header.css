@@ -21,6 +21,14 @@
   margin: auto;
 }
 
+.title span {
+ padding-right: 20px;
+
+ @media screen and (max-width: 780px) {
+  font-size: 13px;
+ }
+}
+
 .header {
   background: #333;
 }

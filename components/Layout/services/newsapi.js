@@ -7,49 +7,16 @@ module.exports = {
     if (!source) {
       return;
     }
-
-    const fetchMethod = {
-      method: 'GET',
-      hostname: 'newsapi.org',
-      path: `/v1/articles?source=${source}&language=en&apiKey=889e21ffc1c845e89b5ba022d2bb0dc3`,
-    };
-
-    return fetch(`//newsapi.org/v1/articles?source=${source}&language=en&apiKey=889e21ffc1c845e89b5ba022d2bb0dc3`, fetchMethod)
-    .then((res) => {
-      const data = res.json();
-      return data;
-    })
-    .then((data) => {
-      if ( data.status !== 'ok') {
-        return
-      }
-      return data;
-    })
-    .catch((rej) => {
-      return rej;
-    });
+    return fetch(`https://newsapi.org/v1/articles?source=${source}&language=en&apiKey=889e21ffc1c845e89b5ba022d2bb0dc3`)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(rej => console.log('There was an error fetching the data:',rej));
   },
 
   getSources: () => {
-    const fetchMethod = {
-      method: 'GET',
-      hostname: 'newsapi.org',
-      path: '/v1/sources?language=en',
-    };
-
-    return fetch('http://newsapi.org/v1/sources?language=en', fetchMethod)
-    .then( (res) => {
-      // [TO] Grap json data and store it as a constant.
-      const data = res.json();
-      return data;
-    })
-    .then((data) => {
-      if (data.status === 'ok') {
-        return data.sources;
-      }
-    })
-    .catch((rej) => {
-      return rej;
-    });
+    return fetch('https://newsapi.org/v1/sources?language=en')
+    .then( res => res.json())
+    .then(data => data.sources)
+    .catch(rej => console.warn(rej))
   },
-};
+}
