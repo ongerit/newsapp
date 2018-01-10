@@ -9,7 +9,7 @@
  */
 
 module.exports = {
-  title: 'Partisan Perspective',        // Your website title
+  title: 'NewsApp',        // Your website title
   url: 'www.thomasongeri.com',          // Your website URL
   project: 'react-static-boilerplate',      // Firebase project. See README.md -> How to Deploy
   trackingID: 'UA-11614378-8',                 // Google Analytics Site's ID
