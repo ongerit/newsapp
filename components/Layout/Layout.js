@@ -7,7 +7,7 @@ import s from './Layout.css';
 import sources from './services/sources.json';
 // Placeholder data
 // import data2 from './services/data.json';
-import { getNews, getSources } from './services/newsapi';
+import {getNews, getSources} from './services/newsapi';
 
 class Layout extends React.Component {
 
@@ -67,36 +67,44 @@ class Layout extends React.Component {
   render() {
     const data = this.state.news;
     const src = this.state.src.sources;
-    const origin = data.source;
+    console.log('DATA', data);
+    console.log('SRC', src);
+
     if (data.status === undefined) {
       this.newsData;
       return
     }
 
-    let src1 = _.find(src, (o) => {
-      return o.id === origin
+    if (data.status) {
+      const newsSource = data.source;
+      console.log('ORGIN', newsSource);
+    }
+
+    let src1 = _.find(src, o => {
+      console.log(o);
+      return o.id === newsSource
     });
+
     return (
-      {
-        if(data) {
-          <div className="mdl-layout mdl-js-layout">
-            <div className="mdl-layout__inner-container">
-              <Header getNewsEvent={this.removeNewselements.bind(this)}/>
-              <main className={`mdl-layout__content ${s.content}`}>
-                <div className={`${s.col}`}>
-                  <div className={`pp-wrapper ${s.wrapper}`}>
-                    { data.articles.map((article, i) => {
-                        return (<Item origin={origin} key={i} article={article} source={src1}/>);
-                      })
-                      }
-                  </div>
-                </div>
-                <Footer/>
-              </main>
+      <div className="mdl-layout mdl-js-layout">
+        <div className="mdl-layout__inner-container">
+          <Header getNewsEvent={this.removeNewselements.bind(this)}/>
+          <main className={`mdl-layout__content ${s.content}`}>
+            <div className={`${s.col}`}>
+              <div className={`pp-wrapper ${s.wrapper}`}>
+                {
+                  if (newsSource) {
+                  data.articles.map(
+                    (article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>;
+                   )}
+                 }
+                }
+              </div>
             </div>
-          </div>
-        }
-      }
+            <Footer/>
+          </main>
+        </div>
+      </div>
     );
   }
 }
