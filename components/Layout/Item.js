@@ -27,7 +27,7 @@ class Item extends React.Component {
       <section style={{backgroundImage: `url(${backgroundImg})`}} className={`mdl-layout__item ${s.item}`} ref={node => (this.root = node)}>
         <div>
           <a title={source.name} href={source.url}>{source.name}</a>
-          <h6 className={`${s.title}`}>{article.title}</h6>
+	  <a href={source.url} title={source.description} ><h6 className={`${s.title}`}>{article.title}</h6></a>
         </div>
       </section>
     );

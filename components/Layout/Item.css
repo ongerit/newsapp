@@ -20,6 +20,19 @@
   background-size: cover;
 }
 
+.item a {
+ color: #fff;
+ text-decoration: none;
+}
+
+.item a:hover {
+ color: #ff4081;
+}
+
+.item h6:hover {
+ color: #ff4081;
+}
+
 .item:before {
   content: '';
   position: absolute;
