@@ -5,28 +5,9 @@
   margin: auto;
   box-sizing: border-box;
   cursor: pointer;
-}
-
-.title {
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  height: 30px;
-  font-family: Futura;
-  font-size: 30px;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-  margin: auto;
-}
-
-.title span {
- padding-right: 20px;
-
- @media screen and (max-width: 780px) {
-  font-size: 13px;
- }
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
 }
 
 .header {

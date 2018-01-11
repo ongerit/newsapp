@@ -1,5 +1,6 @@
 .content {
-  width: 100%
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .wrapper {
@@ -15,23 +16,6 @@
   margin: 0 auto;
   color: #fff;
   align-items: center;
-  /* @media screen and (min-width: 780px) {
-   grid-template-columns: auto auto auto;
-  } */
-
-}
-
-.layout-text,
-.layout-body {
- background: gray;
-}
-
-.layout-text {
-
-}
-
-.layout-body {
-
 }
 
 .hide {
