@@ -17,8 +17,7 @@ class Item extends React.Component {
   render() {
     const article = this.props.article;
     const source = this.props.source;
-    console.log(article);
-    let backgroundImg = article.urlToImage || '/bg.jpg';
+    let backgroundImg = article.urlToImage || '';
 
     if (source === undefined) {
       return
@@ -28,12 +27,16 @@ class Item extends React.Component {
         <section style={{
           backgroundImage: `url(${backgroundImg})`
         }} className={`mdl-layout__item ${s.item}`} ref={node => (this.root = node)}>
-          <div>
-            <a title={source.name} href={source.url}>{source.name}</a>
-            <a href={source.url} title={source.description}>
-              <h6 className={`${s.title}`}>{article.title}</h6>
-            </a>
-          </div>
+            { article.type === 'fill'
+              ? <Placeholder />
+              : <div><a title={source.name} href={source.url}>{source.name}</a>
+                <a href={source.url} title={source.description}>
+                  <h6 className={`${s.title}`}>{article.title}</h6>
+                </a>
+              </div>
+            }
+
+
         </section>
     );
   }

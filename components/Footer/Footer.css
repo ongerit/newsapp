@@ -1,9 +1,17 @@
 .footer {
   z-index: 10;
-  height: 35px;
+  height: 46px;
   position: fixed;
   width: 100%;
   padding: 0 10px;
   bottom: 0;
   box-sizing: border-box;
+}
+
+.grid {
+ display: grid;
+ justify-content: space-between;
+ grid-template-columns: auto auto;
+ display: grid;
+ width: 100%;
 }

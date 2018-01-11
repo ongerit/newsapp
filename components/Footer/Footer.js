@@ -4,13 +4,13 @@ import s from './Footer.css';
 function Footer() {
   return (
     <footer className={`mdl-mini-footer ${s.footer}`}>
-      <div className="mdl-mini-footer__left-section">
+      <div className={`mdl-mini-footer__left-section ${s.grid}`}>
         <p className="mdl-logo"><a href="http://thomasongeri.com">Made with ♡ by Tom</a></p>
         <p className="mdl-logo"><a href="https://newsapi.org/">NewsApi</a></p>
       </div>
       <div className="mdl-mini-footer__right-section">
         <ul className="mdl-mini-footer__link-list">
-          <li className="mdl-mini-footer--social-btn" style={{ backgroundColor: 'transparent' }}>
+          <li className="mdl-mini-footer--social-btn" style={{background: 'transparent'}}>
             <a href="https://github.com/ongerit" role="button" title="GitHub">
               <svg width="20" height="20" viewBox="0 0 24 24">
                 <path

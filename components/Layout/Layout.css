@@ -12,14 +12,12 @@
 }
 
 .col {
-  display: grid;
   margin: 0 auto;
   color: #fff;
   align-items: center;
-
-  @media screen and (min-width: 780px) {
+  /* @media screen and (min-width: 780px) {
    grid-template-columns: auto auto auto;
-  }
+  } */
 
 }
 

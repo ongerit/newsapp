@@ -58,8 +58,8 @@ class Layout extends React.Component {
       this.setState({id: sourceArticle});
       return sourceArticle;
     }).then((source) => {
+      console.log('SOURCE', source);
       getNews(source).then(articles => {
-        console.log(articles);
         this.setState({news: articles})
       }).catch(error => console.log(error));
     })
@@ -69,6 +69,7 @@ class Layout extends React.Component {
     const data = this.state.news;
     const src = this.state.src.sources;
     let newsSource = 'cnn';
+
     if (data.status === undefined) {
       this.newsData;
       return
@@ -76,11 +77,9 @@ class Layout extends React.Component {
 
     if (data.status) {
       const newsSource = data.source;
-      console.log('ORGIN', newsSource);
     }
 
     let src1 = _.find(src, o => {
-      console.log(o);
       return o.id === newsSource
     });
 
@@ -91,11 +90,8 @@ class Layout extends React.Component {
           <main className={`mdl-layout__content ${s.content}`}>
             <div className={`${s.col}`}>
               <div className={`pp-wrapper ${s.wrapper}`}>
-                <Placeholder />
-                <Placeholder />
-
                 {
-                data.articles.map((article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>)
+                  data.articles.map((article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>)
                 }
               </div>
             </div>

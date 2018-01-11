@@ -23,50 +23,6 @@ class Placeholder extends React.Component {
           </div>
       	</div>
 
-        <div className={`${s.contentWrapper}`}>
-          <div className={`${s.placeholder}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-        </div>
-
-        <div className={`${s.contentWrapper}`}>
-          <div className={`${s.placeholder}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-        </div>
-	
-	<div className={`${s.contentWrapper}`}>
-          <div className={`${s.placeholder}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-          <div className={`${s.placeholderBody}`}>
-           <div className={`${s.animatedBackground}`}></div>
-          </div>
-        </div>
       </div>
     )
   }
