@@ -3,10 +3,11 @@ import _ from 'lodash';
 import Header from './Header';
 import Footer from '../Footer';
 import Item from './Item';
+import Placeholder from './Placeholder';
 import s from './Layout.css';
 import sources from './services/sources.json';
 // Placeholder data
-// import data2 from './services/data.json';
+import data2 from './services/data.json';
 import {getNews, getSources} from './services/newsapi';
 
 class Layout extends React.Component {
@@ -19,7 +20,7 @@ class Layout extends React.Component {
     super(props);
     this.state = {
       src: sources,
-      news: '',
+      news: data2,
       id: '',
       counter: 0
     };
@@ -67,9 +68,7 @@ class Layout extends React.Component {
   render() {
     const data = this.state.news;
     const src = this.state.src.sources;
-    console.log('DATA', data);
-    console.log('SRC', src);
-
+    let newsSource = 'cnn';
     if (data.status === undefined) {
       this.newsData;
       return
@@ -92,12 +91,11 @@ class Layout extends React.Component {
           <main className={`mdl-layout__content ${s.content}`}>
             <div className={`${s.col}`}>
               <div className={`pp-wrapper ${s.wrapper}`}>
+                <Placeholder />
+                <Placeholder />
+
                 {
-                  if (newsSource) {
-                  data.articles.map(
-                    (article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>;
-                   )}
-                 }
+                data.articles.map((article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>)
                 }
               </div>
             </div>

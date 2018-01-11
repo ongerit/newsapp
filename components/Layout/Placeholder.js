@@ -2,62 +2,73 @@ import React from 'react';
 import s from './Placeholder.css';
 
 class Placeholder extends React.Component {
-
-  componentDidMount() {
-    window.componentHandler.upgradeElement(this.root);
-  }
-
-  componentWillUnmount() {
-    window.componentHandler.downgradeElements(this.root);
-  }
-
   render() {
-    <div>
-    	<div class="content-wrapper">
-    	  <div class="placeholder">
-    	   <div class="animated-background"></div>
-    	  </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-    	</div>
+    return (
+      <div className={`${s.placeholderContainer}`}>
+      	<div className={`${s.contentWrapper}`}>
 
-      <div class="content-wrapper">
-        <div class="placeholder">
-         <div class="animated-background"></div>
+          <div className={`${s.placeholder}`}>
+      	   <div className={`${s.animatedBackground}`}></div>
+      	  </div>
+
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+      	</div>
+
+        <div className={`${s.contentWrapper}`}>
+          <div className={`${s.placeholder}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
         </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
+
+        <div className={`${s.contentWrapper}`}>
+          <div className={`${s.placeholder}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
         </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
+	
+	<div className={`${s.contentWrapper}`}>
+          <div className={`${s.placeholder}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
+          <div className={`${s.placeholderBody}`}>
+           <div className={`${s.animatedBackground}`}></div>
+          </div>
         </div>
       </div>
-
-      <div class="content-wrapper">
-        <div class="placeholder">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-        <div class="placeholder-body">
-         <div class="animated-background"></div>
-        </div>
-      </div>
-    </div>
+    )
   }
 }
 

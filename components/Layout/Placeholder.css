@@ -1,23 +1,27 @@
-// Animations
-.content-wrapper {
-  height: 543px;
+.placeholderContainer {
+ margin: 0 25px;
+}
+
+.contentWrapper {
+  height: 236px;
   background-color: white;
 }
 
 .placeholder {
-  margin: 0 auto;
-  max-width: 200px;
-  min-height: 25px;
+  height: 25px;
   background-color: #eee;
-  padding-bottom: 30px
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  max-width: 80px;
 }
 
-.placeholder-body {
-  margin: 0 auto;
-  max-width: 200px;
-  min-height: 25px;
+.placeholderBody {
+  height: 25px;
   background-color: #eee;
-  padding-bottom: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
 }
 
 
@@ -30,7 +34,7 @@
   }
 }
 
-.animated-background {
+.animatedBackground {
   animation-duration: 1.25s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;

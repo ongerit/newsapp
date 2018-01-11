@@ -43,18 +43,5 @@ svg {
   transition: 1s opacity ease;
 }
 
-.row:hover .title {
-  display: none;
-  transform: scale(0);
-  animation: 1s transform ease;
-}
-
-.row:hover svg{
-  display: block;
-  transform: scale(1);
-  opacity: 1;
-  animation: 1s opacity ease;
-}
-
 @media screen and (max-width: 1024px) {
 }
