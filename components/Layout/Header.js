@@ -1,17 +1,16 @@
 import React from 'react';
 import s from './Header.css';
 import Navigation from './Navigation'
-import {getNews, getSources} from './services/newsapi';
 
 class Header extends React.Component {
   render() {
+    const {navitems} = this.props;
     return (
-      <header className={`${s.header}`} onClick={this.props.getNewsEvent.bind(this)}>
+      <header className={`${s.header}`}>
         <div className={`${s.row}`}>
-      		<Navigation name="sports" />
-      		<Navigation name="entertainment" />
-      		<Navigation name="news" />
-      		<Navigation name="business" />
+          {
+            navitems.map(nav=> <Navigation key={nav.id} addNewsData={this.props.addNewsData.bind(this)} item={nav} />)
+          }
         </div>
       </header>
     );

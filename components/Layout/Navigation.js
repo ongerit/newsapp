@@ -1,12 +1,11 @@
 import React from 'react';
 import s from './Navigation.css';
-import {getSCategories} from './services/newsapi';
 
 class Navigation extends React.Component {
   render() {
-    const {name} = this.props;
+    const {item, addNewsData} = this.props;
     return (
-        <nav className={`${s.title}`}>{name}</nav>
+        <nav className={`${s.title}`} onClick={(item) => addNewsData(this.props.item.id)}>{item.name}</nav>
     );
   }
 }

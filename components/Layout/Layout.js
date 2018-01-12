@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import _ from 'lodash';
+import {random, find, sampleSize} from 'lodash';
 import Header from './Header';
 import Footer from '../Footer';
 import Item from './Item';
@@ -8,7 +8,7 @@ import s from './Layout.css';
 import sources from './services/sources.json';
 // Placeholder data
 import data2 from './services/data.json';
-import {getNews, getSources} from './services/newsapi';
+import {getNews, getSources, getCategory} from './services/newsapi';
 
 class Layout extends React.Component {
 
@@ -24,25 +24,10 @@ class Layout extends React.Component {
       id: '',
       counter: 0
     };
-    // init
-    this.newsData();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.newsData();
-  }
-
-  removeNewselements() {
-    const articlesTotalEndpoint = 2;
-    const element = this.state.newsA.articles;
-    let updateNew = element.slice(0, -1);
-    let updateNews = Object.assign({}, this.state.news, {articles: updateNew});
-    this.setState({news: updateNews});
-    // [TO] add new articles once
-    // list of articles is less than 2
-    if (element.length < articlesTotalEndpoint) {
-      this.newsData();
-    }
   }
 
   newsData() {
@@ -54,45 +39,46 @@ class Layout extends React.Component {
         articleIdArray.push(e[item].id);
       }
       let numberOfArticles = e.length;
-      let sourceArticle = articleIdArray[_.random(0, numberOfArticles)];
+      let sourceArticle = articleIdArray[random(0, numberOfArticles)];
       this.setState({id: sourceArticle});
       return sourceArticle;
     }).then((source) => {
-      console.log('SOURCE', source);
       getNews(source).then(articles => {
         this.setState({news: articles})
       }).catch(error => console.log(error));
     })
   }
 
+  addNewsData(source) {
+    console.log(source);
+   getNews(source)
+    .then(articles => this.setState({news: articles}))
+    .catch(error => console.log(error));
+  }
+
   render() {
     const data = this.state.news;
     const src = this.state.src.sources;
-    let newsSource = 'cnn';
+    let newsSource = data.source;
 
-    if (data.status === undefined) {
-      this.newsData;
-      return
-    }
+    const navItems = sampleSize(src, 5);
 
     if (data.status) {
       const newsSource = data.source;
     }
 
-    let src1 = _.find(src, o => {
+    let src1 = find(src, o => {
       return o.id === newsSource
     });
 
     return (
       <div className="mdl-layout mdl-js-layout">
         <div className="mdl-layout__inner-container">
-          <Header getNewsEvent={this.removeNewselements.bind(this)}/>
+          <Header navitems={navItems} addNewsData={this.addNewsData.bind(this)}/>
           <main className={`mdl-layout__content ${s.content}`}>
             <div className={`${s.col}`}>
               <div className={`pp-wrapper ${s.wrapper}`}>
-                {
-                  data.articles.map((article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>)
-                }
+                {data.articles.map((article, i) => <Item origin={newsSource} key={i} article={article} source={src1}/>)}
               </div>
             </div>
             <Footer/>

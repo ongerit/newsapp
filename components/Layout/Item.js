@@ -30,7 +30,7 @@ class Item extends React.Component {
             { article.type === 'fill'
               ? <Placeholder />
               : <div><a title={source.name} href={source.url}>{source.name}</a>
-                <a href={source.url} title={source.description}>
+                <a href={article.url} title={source.description}>
                   <h6 className={`${s.title}`}>{article.title}</h6>
                 </a>
               </div>

@@ -20,7 +20,7 @@ module.exports = {
     if (!category) {
       return;
     }
-    return fetch(`https://newsapi.org/v1/articles?source=${category}&language=en&apiKey=889e21ffc1c845e89b5ba022d2bb0dc3`)
+    return fetch(`https://newsapi.org/v1/sources?category=${category}&language=en&apiKey=889e21ffc1c845e89b5ba022d2bb0dc3`)
     .then(res => res.json())
     .then(data => data)
     .catch(rej => console.log('There was an error fetching the category data:',rej));
