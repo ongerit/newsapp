@@ -3,6 +3,7 @@ import moment from 'moment';
 import tz from 'moment-timezone';
 import s from './Item.css';
 import Placeholder from './Placeholder';
+import {textTruncate} from './util/helper';
 
 class Item extends React.Component {
 
@@ -30,13 +31,11 @@ class Item extends React.Component {
             { article.type === 'fill'
               ? <Placeholder />
               : <div><a title={source.name} href={source.url}>{source.name}</a>
-                <a href={article.url} title={source.description}>
-                  <h6 className={`${s.title}`}>{article.title}</h6>
+                <a href={article.url} title={source.description} target="_blank">
+                  <h6 className={`${s.title}`}>{textTruncate(article.title)}</h6>
                 </a>
               </div>
             }
-
-
         </section>
     );
   }
